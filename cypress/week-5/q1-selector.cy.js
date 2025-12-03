@@ -1,7 +1,7 @@
 // Selector
 describe("Exercise 1: Selectors", () => {
   it("Locate using ID, Class, and Attribute selectors", () => {
-    cy.visit(" https://rahulshettyacademy.com/angularpractice/");
+    cy.visit("https://rahulshettyacademy.com/angularpractice/");
     //by class
     cy.get(":nth-child(1) > .form-control").type("Kebe");
     //by Id

@@ -1,4 +1,5 @@
 // ***********************************************
+import "cypress-file-upload"
 // This example commands.js shows you how to
 // create various custom commands and overwrite
 // existing commands.
@@ -11,6 +12,16 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
+Cypress.Commands.add("addTocart",(productName)=>{
+     //here is the function detail
+     cy.visit("https://rahulshettyacademy.com/angularpractice/shop");
+     // cy.get(":nth-child(1) > .card > .card-body > .card-title > a").click()
+     cy.get(".card-title").each(($el, index, $list) => {
+       if ($el.text().includes(productName)) {
+         cy.get(".btn.btn-info").eq(index).should("be.visible").click();
+       }
+     });
+})
 //
 //
 // -- This is a child command --
